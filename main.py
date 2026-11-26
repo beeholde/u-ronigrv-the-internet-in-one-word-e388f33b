@@ -1,13 +1,14 @@
 from pathlib import Path
 
-WORD = "Scrollcoma"
-OUTPUT = Path("/output/entry.txt")
+ENTRY_WORD = "Scrollcoma"
+TARGET = Path("/output/entry.txt")
 
 
-def main() -> None:
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(WORD, encoding="utf-8")
+def write_entry() -> None:
+    output_dir = TARGET.parent
+    output_dir.mkdir(parents=True, exist_ok=True)
+    TARGET.write_text(ENTRY_WORD, encoding="utf-8")
 
 
 if __name__ == "__main__":
-    main()
+    write_entry()
